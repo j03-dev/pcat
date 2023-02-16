@@ -32,7 +32,8 @@ def find_and_color(word: str) -> str:
 def read_file(filename: str) -> None:
     with open(filename, "r") as file:
         result = file.readlines()
-        for word in result:
+        for index, word in enumerate(result):
+            sys.stdout.write(str(index + 1))
             line = word.split()
             if len(line) > 0:
                 # if line start with #
